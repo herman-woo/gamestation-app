@@ -14,4 +14,8 @@ export class GameService {
   getGames(): Observable<Game[]> {
     return this.http.get<Game[]>(this.apiUrl)
   }
+
+  createGame(newGame: FormData): Observable<Game> {
+    return this.http.post<Game>(this.apiUrl, newGame);
+  }
 }

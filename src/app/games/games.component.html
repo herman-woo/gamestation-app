@@ -1,3 +1,8 @@
-<div class="games-container" *ngFor="let game of games">
-    <p class="game">{{ game.game_name }}</p>
+<div class="games-page">
+    <div class="games-container">
+        <div class="game" *ngFor="let game of games">
+            <img [src]="getImageUrl(game.game_image_path)" alt="{{ game.game_name }}" />
+            <p>Completion: {{ game.game_completion_percentage }}%</p>
+        </div>
+    </div>
 </div>

@@ -15,10 +15,14 @@ export class GamesComponent implements OnInit {
   games: Game[] = [];
 
   constructor(private gameService: GameService) {}
-
+  private apiUrl = 'http://localhost:8000/';
   ngOnInit(): void {
     this.gameService.getGames().subscribe((data) => {
       this.games = data;
     });
+  }
+
+  getImageUrl(imagePath: string): string {
+    return `${this.apiUrl}${imagePath}`;
   }
 }

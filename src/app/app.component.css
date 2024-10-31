@@ -1,0 +1,36 @@
+/* Universal reset for all elements */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Apply Inter font to the whole page */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Banner styling with Inter font */
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+/* Centering the application container below the banner */
+.application {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; /* Offset for the fixed banner height */
+    text-align: center;
+}

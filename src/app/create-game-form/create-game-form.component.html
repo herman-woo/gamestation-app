@@ -1,0 +1,60 @@
+<button class="create-button" (click)="openPopup()">Create</button>
+<!-- Popup form -->
+<div *ngIf="showPopup" class="popup-overlay" (click)="closePopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+        <h2>Create Game Here</h2>
+        <form (ngSubmit)="submitForm()">
+            <label>
+                Game Name:
+                <input type="text" [(ngModel)]="game.game_name" name="game_name" required>
+            </label>
+            <label>
+                Platform:
+                <select [(ngModel)]="game.game_platform" name="game_platform">
+                    <option value="Playstation 3">Playstation 3</option>
+                    <option value="Playstation 4">Playstation 4</option>
+                    <option value="Playstation 5">Playstation 5</option>
+                    <option value="Steam">Steam</option>
+                </select>
+            </label>
+            <label>
+                Status:
+                <select [(ngModel)]="game.game_status" name="game_status">
+                    <option value="Backlogged">Backlogged</option>
+                    <option value="Waitlist">Waitlist</option>
+                    <option value="Playing">Playing</option>
+                    <option value="Post-Game">Post-Game</option>
+                    <option value="Finished">Finished</option>
+                </select>
+            </label>
+            <label>
+                Completion Percentage:
+                <input type="number" [(ngModel)]="game.game_completion_percentage" name="game_completion_percentage" min="0"
+                    max="100">
+            </label>
+            <label>
+                Hours Played:
+                <input type="number" [(ngModel)]="game.hours_played" name="hours_played">
+            </label>
+            <label>
+                Completed:
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" [(ngModel)]="game.game_completed" name="game_completed" [value]="true">
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" [(ngModel)]="game.game_completed" name="game_completed" [value]="false">
+                        No
+                    </label>
+                </div>
+            </label>
+            <label>
+                Image:
+                <input type="file" (change)="onFileSelected($event)">
+            </label>
+            <button type="submit">Create</button>
+            <button type="button" (click)="closePopup()">Close</button>
+        </form>
+    </div>
+</div>

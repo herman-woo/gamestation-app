@@ -1,9 +1,55 @@
-.game{
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 120px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game {
+    position: relative;
+    background-color: #e3f2fd;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
     width: 200px;
-    height: 200px;
-    background-color: darkgreen;
-  }
+    height: 300px;
+}
 
-.games-container{
+.game img {
+    width: 90%;
+    height: 80%;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 3px solid transparent;
+}
 
+.game p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+}
+.game h3 {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #007bb5;
+    text-align: center;
+}
+
+.game:hover {
+    transform: translateY(-10px) scale(1.05); /* Pop-out effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
