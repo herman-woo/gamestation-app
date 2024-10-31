@@ -11,4 +11,5 @@ import { GamesComponent } from './games/games.component';
 })
 export class AppComponent {
   title = 'gamestation-app';
+  games = []
 }

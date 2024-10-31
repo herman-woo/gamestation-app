@@ -1,1 +1,3 @@
-<div class="green-box">GAME</div>
+<div class="games-container" *ngFor="let game of games">
+    <p class="game">{{ game.game_name }}</p>
+</div>
