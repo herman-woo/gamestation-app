@@ -34,3 +34,7 @@ body {
     padding-top: 80px; /* Offset for the fixed banner height */
     text-align: center;
 }
+
+h1{
+    margin-top:40px;
+}

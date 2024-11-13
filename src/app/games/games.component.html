@@ -1,8 +1,9 @@
 <div class="games-page">
     <div class="games-container">
         <div class="game" *ngFor="let game of games">
+            <p>{{game.original_platform}}</p>
             <img [src]="getImageUrl(game.game_image_path)" alt="{{ game.game_name }}" />
-            <p>Completion: {{ game.game_completion_percentage }}%</p>
+            <p>{{game.remastered_platform}}</p>
         </div>
     </div>
 </div>

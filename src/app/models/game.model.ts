@@ -1,12 +1,12 @@
 
 export interface Game {
     game_name: string;
-    game_platform: string;
-    game_status: string;
-    game_completion_percentage: number;
+    original_platform: string;
+    remastered_platform: string;
+    playing_status: number;
+    completion_status: number;
+    platinum: boolean;
+    completed: boolean;
     hours_played: number;
-    game_completed: boolean;
     game_image_path: string;
-    created_time: Date;
-    update_time: Date;
   }

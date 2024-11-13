@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GameService } from '../game.service';
 import { Game } from '../models/game.model';
 
 
@@ -11,18 +10,13 @@ import { Game } from '../models/game.model';
   templateUrl: './games.component.html',
   styleUrl: './games.component.css'
 })
-export class GamesComponent implements OnInit {
-  games: Game[] = [];
+export class GamesComponent {
+  @Input() games?: Game[];
 
-  constructor(private gameService: GameService) {}
   private apiUrl = 'http://localhost:8000/';
-  ngOnInit(): void {
-    this.gameService.getGames().subscribe((data) => {
-      this.games = data;
-    });
-  }
-
   getImageUrl(imagePath: string): string {
     return `${this.apiUrl}${imagePath}`;
   }
+
+
 }
